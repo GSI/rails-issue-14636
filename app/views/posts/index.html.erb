@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Posts</h1>
+
+<%= link_to 'LINK TO FIRST POST (from to_param)', Post.find(1) %>
+<pre><%= (link_to '', Post.find(1)).inspect %></pre>
+
+<a href="/posts/here/2015/1">LINK TO FIRST POST (manually spelled out without %2F)</a>
+<pre><%= '<a href="/posts/here/2015/1"></a>'.inspect %></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Location</th>
+      <th>D8</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.location %></td>
+        <td><%= post.d8 %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>

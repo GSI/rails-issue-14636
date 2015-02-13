@@ -1,0 +1,6 @@
+# Goto http://localhost:3000/posts
+# Click @LINK TO FIRST POST (from to_param)@ ... and note how it causes *Routing Error*
+# Goto http://localhost:3000/posts
+# Click @LINK TO FIRST POST (manually spelled out without %2F)@ ... and note how you are taken to the according page just fine
+
+Also, note that the output of @rake routes@ just contains one single route for *posts#show*.
